@@ -1,0 +1,30 @@
+# IDE
+.vscode/
+.idea/
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build
+dist/
+build/
+.env
+
+# Database
+backend/store.db
+backend/store.db-journal
+
+# Logs
+*.log
+npm-debug.log*
+
+# System
+.DS_Store
+Thumbs.db
+
+# UI Artifacts (Local only)
+.gemini/
+brain/
+*.png
+!storefront/public/*.png

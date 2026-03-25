@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+:root {
+  --color-base: #f4f7fb; /* Ultra pale ice blue */
+  --color-text: #0f172a; /* Deep slate navy */
+  --color-accent: #1e293b; /* Dark navy for highlights/footer */
+  --color-bg-alt: #e6edf4; /* Soft muted blue for alternating blocks */
+  
+  --font-body: 'Suisse Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-heading: 'Zapf Humanist', 'Optima', serif;
+  
+  --transition: 0.4s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-base);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+/* Aesop Links */
+.aesop-link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding-bottom: 2px;
+}
+
+.aesop-link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.aesop-link-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0px;
+  left: 0;
+  background-color: var(--color-text);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.aesop-link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Base Buttons */
+.aesop-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border: 1px solid rgba(51, 51, 51, 0.2);
+  background-color: transparent;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition);
+  text-decoration: none;
+  gap: 20px;
+}
+
+.aesop-btn:hover {
+  background-color: var(--color-text);
+  color: var(--color-base);
+}
+
+/* Base Primitives */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.btn-primary {
+  background-color: #252525;
+  color: #fffef2;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #0f172a;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Typography styles */
+.text-supra {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.text-heading {
+  font-family: var(--font-heading);
+  font-size: 30px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1024px) {
+  .text-heading {
+    font-size: 36px;
+  }
+}
+
+.text-body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text);
+}
