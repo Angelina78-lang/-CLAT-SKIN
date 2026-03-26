@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api" },
+    { "source": "/(.*)", "destination": "/storefront/$1" }
+  ],
+  "redirects": [
+    { "source": "/category/(.*)", "destination": "/" }
+  ],
+  "builds": [
+    {
+      "src": "storefront/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    },
+    {
+      "src": "api/index.js",
+      "use": "@vercel/node"
+    }
+  ]
+}
